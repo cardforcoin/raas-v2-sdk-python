@@ -74,7 +74,7 @@ class CustomerModel(object):
         if dictionary.get("accounts") != None:
             accounts = list()
             for structure in dictionary.get("accounts"):
-                accounts.append(raas_v2.models.account_summary.AccountSummaryModel.from_dictionary(structure))
+                accounts.append(raas_v2.models.account_summary_model.AccountSummaryModel.from_dictionary(structure))
 
         # Return an object of this model
         return cls(customer_identifier,
@@ -82,5 +82,3 @@ class CustomerModel(object):
                    status,
                    created_at,
                    accounts)
-
-
