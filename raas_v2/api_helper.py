@@ -310,7 +310,8 @@ class APIHelper(object):
 
         @classmethod
         def from_datetime(cls, date_time):
-            return date_time.isoformat()
+            if date_time:
+                return date_time.isoformat()
 
         @classmethod
         def from_value(cls, value):
