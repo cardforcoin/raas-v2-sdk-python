@@ -236,8 +236,8 @@ class OrdersController(BaseController):
                 'accountIdentifier': options.get('account_identifier', None),
                 'customerIdentifier': options.get('customer_identifier', None),
                 'externalRefID': options.get('external_ref_id', None),
-                'startDate': APIHelper.RFC3339DateTime(options.get('start_date', None)),
-                'endDate': APIHelper.RFC3339DateTime(options.get('end_date', None)),
+                'startDate': options.get('start_date', None) and APIHelper.RFC3339DateTime(options.get('start_date', None)),
+                'endDate': options.get('end_date', None) and APIHelper.RFC3339DateTime(options.get('end_date', None)),
                 'elementsPerBlock': options.get('elements_per_block', None),
                 'page': options.get('page', None)
             }
